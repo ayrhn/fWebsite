@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Oswald|Raleway');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.intro {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-image: url("images/samuel-zeller-172120.jpg");
+    display: table;
+    top: 0;
+    background-size: cover;
+}
+
+.intro .inner {
+    display: table-cell;
+    vertical-align: middle;
+    max-width: none;
+}
+
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content h1 {
+    font-family: 'Raleway', sans-serif;
+    color: #F9F3F4;
+    text-shadow: 0 0 300px #000;
+    font-size: 500%;
+}
+
+.btn {
+    border-radius: 9px;
+    font-family: 'oswald', sans-serif;
+    color: #036a81;
+    font-size: 135%;
+    padding: 10px 20px;
+    border: solid #036a81 3px;
+    margin: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.btn:hover {
+    color: #F9F3F4;
+    border: solid #F9F3F4 3px;
+}
+
