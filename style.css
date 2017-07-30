@@ -51,6 +51,7 @@ html, body {
     color: #F9F3F4;
     text-shadow: 0 0 300px #000;
     font-size: 500%;
+    visibility: hidden;
 }
 
 .btn {
@@ -63,10 +64,10 @@ html, body {
     margin: 15px;
     text-transform: uppercase;
     text-decoration: none;
+    visibility: hidden;
 }
 
 .btn:hover {
     color: #F9F3F4;
     border: solid #F9F3F4 3px;
 }
-
