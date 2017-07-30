@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>JS Drum Kit</title>
+  <title>Drums!</title>
   <link rel="stylesheet" href="style.css">
+  <script src="../js/jquery.js" type="text/javascript"></script>
 </head>
 <body>
 
+  <div class="message">
+
+  </div>
 
   <div class="keys">
     <div data-key="65" class="key">
@@ -46,7 +50,7 @@
       <span class="sound">tink</span>
     </div>
   </div>
-
+  
   <audio data-key="65" src="sounds/clap.wav"></audio>
   <audio data-key="83" src="sounds/hihat.wav"></audio>
   <audio data-key="68" src="sounds/kick.wav"></audio>
@@ -59,6 +63,29 @@
 
 <script>
 
+  $(document).ready(function () {
+      $('.key').css("visibility", "visible").hide();
+      $(".key").delay(2000).fadeIn();
+  });
+
+  window.addEventListener("keydown", function(e) {
+    //Each key has a unique keycode, use JS to check if each key has an audio element as defined above
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    if(!audio) return; 
+    audio.currentTime = 0;
+    audio.play();
+    key.classList.add("playing");
+  });
+
+  const keys = document.querySelectorAll(".key");
+  keys.forEach(key => key.addEventListener("transitionend", removeTransition));
+  window.addEventListener("keydown", playSound);
+
+  function removeTransition(e) {
+    if(e.propertyName !== "transform") return;
+    this.classList.remove("playing");
+  }
 </script>
 
 
